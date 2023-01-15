@@ -1,0 +1,11 @@
+
+
+
+<%= render @friend %>
+
+<div>
+  
+  <div>
+  <%= button_to "Destroy this friend", @friend, class: "btn btn-danger", method: :delete, form: { data: {turbo_confirm: "Are you sure? " + @friend.first_name + " will be deleted from your friends list!"} }%>
+</div>
+</div>

@@ -1,0 +1,44 @@
+<div class = "card">
+  <div class = "card-header text-light bg-dark">
+<h2>Sign up</h2>
+</div>
+<div class="card-body bg-light">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { data: { turbo: false} } ) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+ <div class="field form-group">
+    <% f.label :first_name %>
+    <%= f.first_name_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control", placeholder: "First Name"%>
+  </div>
+  <div class="field form-group">
+    <% f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email"%>
+  </div>
+  <br>
+  <div class = "form-row">
+    <div class = "col">
+  <div class="field form-group">
+    <% f.label :password %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+  </div>
+</div>
+
+<div class="col">
+  <div class="field form-group">
+    <% f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" %>
+  </div>
+</div>
+</div>
+</br>
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn btn-secondary"%>
+  </div>
+<% end %>
+ </div>
+ </div>
+</br>
+ <div class = "text-info">Already Signed up?</div></br>
+<%= render "devise/shared/links" %>
